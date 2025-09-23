@@ -32,5 +32,5 @@ public class Images {
     }
 
     private Image img;
-    private ImageShape image;
+    protected ImageShape image;
 }

@@ -8,6 +8,7 @@ import java.awt.*;
 public class House {
     public House(GWindow window){
         this.window = window;
+        setShadow();
         setRoof();
         setSideHouse();
         setFrontHouse();
@@ -84,6 +85,15 @@ public class House {
         doorOutline.addTo(window);
     }
 
+    private void setShadow(){
+        shadow.addPoint(75,403);
+        shadow.addPoint(38,438);
+        shadow.addPoint(211,518);
+        shadow.addPoint(357, 450);
+        shadow.addPoint(404,393);
+        shadow.addTo(window);
+    }
+
     private final GWindow window;
 
     private final Color roofColor = new Color(115, 62,67);
@@ -104,4 +114,7 @@ public class House {
     private final Color doorColorOutline = new Color(234,212,170);
     private final Polygon door = new Polygon(doorColor, true);
     private final Polygon doorOutline = new Polygon(doorColorOutline, false);
+
+    private final Color shadowColor = new Color(24,20,37,100);
+    private final Polygon shadow = new Polygon(shadowColor, true);
 }
