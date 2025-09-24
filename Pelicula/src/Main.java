@@ -1,3 +1,5 @@
+import characters.Cato;
+import characters.Cow;
 import props.*;
 import uwcse.graphics.GWindow;
 
@@ -16,5 +18,14 @@ public class Main {
         House house = new House(window);
         CowPen cowPen = new CowPen(0,0,"imgs/cowpen.png", window);
         Straw straw = new Straw(0,0,"imgs/straw.png", window);
+
+        Cow cow1 = new Cow(610,309,"imgs/cow/minicow.png",window);
+        Cow cow2 = new Cow(660,340,"imgs/cow/minicow.png",window);
+        Cow cow3 = new Cow(550,340,"imgs/cow/miniwoc.png",window);
+        Cow cow4 = new Cow(610,360,"imgs/cow/minicow.png",window);
+        Cato cato = new Cato(320,370,"imgs/cato/mini/cato.png");
+        cato.addTo(window);
+        Thread.sleep(1000);
+        cato.startWalking();
     }
 }
