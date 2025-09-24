@@ -94,6 +94,18 @@ public class House {
         shadow.addTo(window);
     }
 
+    public void removeFromWindow(){
+        roof.removeFromWindow();
+        roofOutline.removeFromWindow();
+        roofBack.removeFromWindow();
+        frontHouse.removeFromWindow();
+        frontHouseOutline.removeFromWindow();
+        sideHouse.removeFromWindow();
+        door.removeFromWindow();
+        doorOutline.removeFromWindow();
+        shadow.removeFromWindow();
+    }
+
     private final GWindow window;
 
     private final Color roofColor = new Color(115, 62,67);

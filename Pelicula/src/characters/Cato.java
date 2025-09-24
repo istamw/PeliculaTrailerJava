@@ -1,25 +1,17 @@
 package characters;
 
 import utils.Images;
+import uwcse.graphics.GWindow;
 
 import java.io.IOException;
 
 public class Cato extends Images{
-    public Cato(int x, int y, String path) throws IOException {
+    public Cato(int x, int y, String path, GWindow window) throws IOException {
         super(x, y, path);
+        addTo(window);
     }
 
-    public void startWalking() {
-        // Hilo para mover al gato
-        Thread mover = new Thread(() -> {
-            try {
-                walkCowPen();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        });
-
-        // Hilo para animar al gato
+    public void startWalking() throws IOException, InterruptedException {
         Thread animar = new Thread(() -> {
             try {
                 animWalk();
@@ -28,8 +20,8 @@ public class Cato extends Images{
             }
         });
 
-        mover.start();
         animar.start();
+        walkCowPen();
     }
 
     public void voltearAtras(int sleep) throws InterruptedException{

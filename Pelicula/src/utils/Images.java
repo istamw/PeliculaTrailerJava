@@ -22,6 +22,10 @@ public class Images {
         image.addTo(window);
     }
 
+    public void removeFromWindow(){
+        image.removeFromWindow();
+    }
+
     public void setImage(String path){
         try {
             img = ImageIO.read(Objects.requireNonNull(this.getClass().getClassLoader().getResource(path)));

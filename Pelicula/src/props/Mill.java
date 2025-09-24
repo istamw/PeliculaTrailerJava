@@ -101,6 +101,18 @@ public class Mill extends Thread{
         }
     }
 
+    public void removeFromWindow(){
+        millBottom.removeFromWindow();
+        millBottomDark.removeFromWindow();
+        millTop.removeFromWindow();
+        wheel.removeFromWindow();
+        blade1.removeFromWindow();
+        blade2.removeFromWindow();
+        blade3.removeFromWindow();
+        blade4.removeFromWindow();
+        shadow.removeFromWindow();
+    }
+
     private final GWindow window;
 
     private final Color millBottomColor = new Color(184, 111, 80);
@@ -117,7 +129,6 @@ public class Mill extends Thread{
     private final Color bladesColor = new Color(62, 39,49);
 
     private final Polygon blade1 = new Polygon(bladesColor, true);
-
     private final Polygon blade2 = new Polygon(bladesColor, true);
     private final Polygon blade3 = new Polygon(bladesColor, true);
     public final Polygon blade4 = new Polygon(bladesColor, true);
