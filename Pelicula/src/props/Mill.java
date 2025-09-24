@@ -9,6 +9,7 @@ import java.awt.*;
 public class Mill extends Thread{
     public Mill(GWindow window) throws InterruptedException {
         this.window = window;
+        setShadow();
         setMillBottom();
         setMillTop();
         setWheel();
@@ -22,7 +23,13 @@ public class Mill extends Thread{
         millBottom.addPoint(390,124);
         millBottom.addPoint(306,124);
 
+        millBottomDark.addPoint(306,124);
+        millBottomDark.addPoint(270,304);
+        millBottomDark.addPoint(312,322);
+        millBottomDark.addPoint(328,124);
+
         millBottom.addTo(window);
+        millBottomDark.addTo(window);
     }
 
     private void setMillTop(){
@@ -36,6 +43,14 @@ public class Mill extends Thread{
 
     private void setWheel(){
         wheel.addTo(window);
+    }
+
+    private void setShadow(){
+        shadow.addPoint(420,304);
+        shadow.addPoint(331,380);
+        shadow.addPoint(270,304);
+
+        shadow.addTo(window);
     }
 
     public void moveBlades() throws InterruptedException {
@@ -89,7 +104,9 @@ public class Mill extends Thread{
     private final GWindow window;
 
     private final Color millBottomColor = new Color(184, 111, 80);
+    private final Color millBottomDarkColor = new Color(138,83,59);
     private final Polygon millBottom = new Polygon(millBottomColor, true);
+    private final Polygon millBottomDark = new Polygon(millBottomDarkColor, true);
 
     private final Color millTopColor = new Color(115,62,57);
     private final Polygon millTop = new Polygon(millTopColor, true);
@@ -104,4 +121,7 @@ public class Mill extends Thread{
     private final Polygon blade2 = new Polygon(bladesColor, true);
     private final Polygon blade3 = new Polygon(bladesColor, true);
     public final Polygon blade4 = new Polygon(bladesColor, true);
+
+    private final Color shadowColor = new Color(24,20,37,100);
+    private final Polygon shadow = new Polygon(shadowColor, true);
 }
