@@ -9,7 +9,19 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.Objects;
 
+/**
+ * Clase que maneja la lluvia en el trailer
+ *
+ * @author istam
+ */
+
 public class Rain extends Thread{
+    /**
+     * Crear lluvia
+     * @param x posicion x
+     * @param y posicion y
+     * @param window ventana contenedora
+     */
     public Rain(int x, int y, GWindow window){
         try {
             img = ImageIO.read(Objects.requireNonNull(this.getClass().getClassLoader().getResource("imgs/rain/rain30.png")));
@@ -21,6 +33,10 @@ public class Rain extends Thread{
         }
     }
 
+    /**
+     * Cambiar la imagen actual
+     * @param path ruta a la imagen
+     */
     public void setImage(String path){
         try {
             img = ImageIO.read(Objects.requireNonNull(this.getClass().getClassLoader().getResource(path)));
@@ -30,11 +46,17 @@ public class Rain extends Thread{
         }
     }
 
+    /**
+     * quita la lluvia de la ventana
+     */
     public void removeFromWindow(){
         gif.removeFromWindow();
         gray.removeFromWindow();
     }
 
+    /**
+     * Realiza el cambio de la animcacion de la lluvia entre los distintos frames que tiene
+     */
     public void run(){
         while (true) {
             for (int i=1; i<= 30; i++) {
@@ -48,6 +70,7 @@ public class Rain extends Thread{
         }
     }
 
+    //Declaracion y incializacion de las variables en uso.
     private Image img;
     private ImageShape gif;
     private Color color = new Color(20,20,100,100);

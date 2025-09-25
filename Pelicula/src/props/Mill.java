@@ -6,7 +6,19 @@ import uwcse.graphics.Polygon;
 
 import java.awt.*;
 
+/**
+ * Clase para crear el molino que mueve sus paletas
+ *
+ * @author istam
+ */
+
 public class Mill extends Thread{
+    /**
+     * Construcctor de el molino
+     * @param window ventana contenedora
+     * @param bladeVelocity Velocidad para las paletas del molino
+     * @throws InterruptedException
+     */
     public Mill(GWindow window, int bladeVelocity) throws InterruptedException {
         this.window = window;
         this.bladeVelocity = bladeVelocity;
@@ -16,6 +28,9 @@ public class Mill extends Thread{
         setWheel();
     }
 
+    /**
+     * Establece la zona inferior de el molino
+     */
     private void setMillBottom(){
         millBottom.addPoint(270,304);
         millBottom.addPoint(312,322);
@@ -33,6 +48,9 @@ public class Mill extends Thread{
         millBottomDark.addTo(window);
     }
 
+    /**
+     * Establece la zona superior del molino
+     */
     private void setMillTop(){
         millTop.addPoint(292,124);
         millTop.addPoint(401,124);
@@ -42,10 +60,16 @@ public class Mill extends Thread{
         millTop.addTo(window);
     }
 
+    /**
+     * Establece la rueda que hace girar las paletas
+     */
     private void setWheel(){
         wheel.addTo(window);
     }
 
+    /**
+     * Establece la sombra de el molino
+     */
     private void setShadow(){
         shadow.addPoint(420,304);
         shadow.addPoint(331,380);
@@ -54,6 +78,10 @@ public class Mill extends Thread{
         shadow.addTo(window);
     }
 
+    /**
+     * Mover las paletas indefinidamente
+     * @throws InterruptedException
+     */
     public void moveBlades() throws InterruptedException {
         int pivotX = 347;
         int pivotY = 87;
@@ -94,6 +122,9 @@ public class Mill extends Thread{
         }
     }
 
+    /**
+     * Metodo para ejecutar el moveBlades en un hio separado
+     */
     public void run(){
         try {
             moveBlades();
@@ -102,6 +133,9 @@ public class Mill extends Thread{
         }
     }
 
+    /**
+     * Quitar al molino de la ventana
+     */
     public void removeFromWindow(){
         millBottom.removeFromWindow();
         millBottomDark.removeFromWindow();
@@ -114,6 +148,7 @@ public class Mill extends Thread{
         shadow.removeFromWindow();
     }
 
+    //Declaracion y inicializacion de las variables en uso
     private final GWindow window;
     private final int bladeVelocity;
 

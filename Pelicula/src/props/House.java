@@ -5,7 +5,17 @@ import uwcse.graphics.Polygon;
 
 import java.awt.*;
 
+/**
+ * Clase para crear la casa de el fondo principak (granero)
+ *
+ * @author istam
+ */
+
 public class House {
+    /**
+     * Construcctor de la casa
+     * @param window ventana contenedora
+     */
     public House(GWindow window){
         this.window = window;
         setShadow();
@@ -15,6 +25,9 @@ public class House {
         setDoor();
     }
 
+    /**
+     * Establece todas las partes del techo de la casa
+     */
     private void setRoof(){
         roof.addPoint(158,216);
         roof.addPoint(339,275);
@@ -38,6 +51,9 @@ public class House {
         roofOutline.addTo(window);
     }
 
+    /**
+     * Establece la parte frontal de la casa
+     */
     private void setFrontHouse(){
         int meno = 10;
         frontHouse.addPoint(339,275);
@@ -60,6 +76,9 @@ public class House {
         frontHouseOutline.addTo(window);
     }
 
+    /**
+     * Establece los laterales de la casa
+     */
     private void setSideHouse(){
         sideHouse.addPoint(250, 380);
         sideHouse.addPoint(249,471);
@@ -69,6 +88,9 @@ public class House {
         sideHouse.addTo(window);
     }
 
+    /**
+     * Establece la puerta de la casa
+     */
     private void setDoor(){
         final int EXTRA = 5;
         door.addPoint(300,450-EXTRA);
@@ -85,6 +107,9 @@ public class House {
         doorOutline.addTo(window);
     }
 
+    /**
+     * Establece la sombra de la casa
+     */
     private void setShadow(){
         shadow.addPoint(75,403);
         shadow.addPoint(38,438);
@@ -94,6 +119,9 @@ public class House {
         shadow.addTo(window);
     }
 
+    /**
+     * Quita la casa de la ventana
+     */
     public void removeFromWindow(){
         roof.removeFromWindow();
         roofOutline.removeFromWindow();
@@ -106,6 +134,8 @@ public class House {
         shadow.removeFromWindow();
     }
 
+    //Variables de instancia utilizadas
+    //colores y poligonos
     private final GWindow window;
 
     private final Color roofColor = new Color(115, 62,67);

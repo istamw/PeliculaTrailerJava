@@ -8,22 +8,34 @@ import uwcse.graphics.GWindow;
 
 import java.io.IOException;
 
+/**
+ * Escena 3 de el trailer
+ *
+ * @author istam
+ */
+
 public class Scene3 {
+    /**
+     * Metodo principal en el que se ejecuta la escena al ser llamada
+     * @param window ventana contenedora
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static void start(GWindow window) throws IOException, InterruptedException {
         backGround = new BackGround( 0,0, "imgs/backgrounds/landscape.png", window);
         Music pop = new Music("pop.wav");
         pop.start();
-        crop = new Crop(0,0,"imgs/crop.png", window);
+        crop = new Crop(0,0, "imgs/crop.png", window);
         mill = new Mill(window,20);
         mill.start();
         house = new House(window);
-        cowPen = new CowPen(0,0,"imgs/cowpen.png", window);
-        straw = new Straw(0,0,"imgs/straw.png", window);
-        cow1 = new Cow(610,309,"imgs/cow/minicow.png",window);
-        cow2 = new Cow(660,335,"imgs/cow/miniwoc.png",window);
-        cow3 = new Cow(550,335,"imgs/cow/minicow.png",window);
-        cow4 = new Cow(604,355,"imgs/cow/minicow.png",window);
-        cato = new Cato(520,360,"imgs/cato/mini/cato.png", window);
+        cowPen = new CowPen(0,0, "imgs/cowpen.png", window);
+        straw = new Straw(0,0, "imgs/straw.png", window);
+        cow1 = new Cow(610,309, "imgs/cow/minicow.png",window);
+        cow2 = new Cow(660,335, "imgs/cow/miniwoc.png",window);
+        cow3 = new Cow(550,335, "imgs/cow/minicow.png",window);
+        cow4 = new Cow(604,355, "imgs/cow/minicow.png",window);
+        cato = new Cato(520,360, "imgs/cato/mini/cato.png", window);
 
         Thread.sleep(1000);
         cato.four();
@@ -39,6 +51,9 @@ public class Scene3 {
         finished();
     }
 
+    /**
+     * Limpiar la ventana cuando la escena finalice
+     */
     private static void finished(){
         backGround.removeFromWindow();
         crop.removeFromWindow();
@@ -52,6 +67,7 @@ public class Scene3 {
         cow4.removeFromWindow();
     }
 
+    //declaracion de las variables en uso por la escena
     private static BackGround backGround;
     private static Crop crop;
     private static Mill mill;

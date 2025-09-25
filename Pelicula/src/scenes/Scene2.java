@@ -8,25 +8,27 @@ import uwcse.graphics.GWindow;
 
 import java.io.IOException;
 
-public class Scene2 {
-    private static BackGround backGround;
-    private static Cow cow1;
-    private static Cow cow2;
-    private static Cow cow3;
-    private static Cow cow4;
-    private static Hand hand1;
-    private static Hand hand2;
-    private static Hand hand3;
-    private static Hand hand4;
+/**
+ * Escena 2 de el trailer
+ *
+ * @author istam
+ */
 
+public class Scene2 {
+    /**
+     * Metodo principal en el que se ejecuta la escena al ser llamada
+     * @param window ventana contenedora
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static void start(GWindow window) throws IOException, InterruptedException {
-        backGround = new BackGround(0,0,"imgs/backgrounds/scene2.png", window);
+        backGround = new BackGround(0,0, "imgs/backgrounds/scene2.png", window);
         Music pop = new Music("pop.wav");
         pop.start();
-        cow1 = new Cow(150,176,"imgs/cow/cow.png",window);
-        cow2 = new Cow(400,136,"imgs/cow/cow2.png",window);
-        cow3 = new Cow(100,300,"imgs/cow/cow2.png",window);
-        cow4 = new Cow(430,300,"imgs/cow/cow.png",window);
+        cow1 = new Cow(150,176, "imgs/cow/cow.png",window);
+        cow2 = new Cow(400,136, "imgs/cow/cow2.png",window);
+        cow3 = new Cow(100,300, "imgs/cow/cow2.png",window);
+        cow4 = new Cow(430,300, "imgs/cow/cow.png",window);
 
         hand2 = new Hand("imgs/hand/hand3.png",window);
         hand1 = new Hand("imgs/hand/hand1.png",window);
@@ -49,6 +51,9 @@ public class Scene2 {
         finished();
     }
 
+    /**
+     * Limpiar la ventana cuando la escena finalice
+     */
     private static void finished(){
         backGround.removeFromWindow();
         cow1.removeFromWindow();
@@ -60,4 +65,15 @@ public class Scene2 {
         hand3.removeFromWindow();
         hand4.removeFromWindow();
     }
+
+    //declaracion de las variables en uso por la escena
+    private static BackGround backGround;
+    private static Cow cow1;
+    private static Cow cow2;
+    private static Cow cow3;
+    private static Cow cow4;
+    private static Hand hand1;
+    private static Hand hand2;
+    private static Hand hand3;
+    private static Hand hand4;
 }

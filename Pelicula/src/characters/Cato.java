@@ -6,12 +6,31 @@ import uwcse.graphics.GWindow;
 
 import java.io.IOException;
 
+/**
+ * Personaje Gato
+ *
+ * @author istam
+ */
+
 public class Cato extends Images{
+    /**
+     * Construcctor de un nuevo gato
+     * @param x posicion X
+     * @param y posicion Y
+     * @param path ruta al IMAGE
+     * @param window ventana contenedora
+     * @throws IOException
+     */
     public Cato(int x, int y, String path, GWindow window) throws IOException {
         super(x, y, path);
         addTo(window);
     }
 
+    /**
+     * Caminar hacia el Corral de las vacas
+     * @throws InterruptedException
+     * @throws IOException
+     */
     public void walkCowPen() throws InterruptedException, IOException {
         animWalk();
         isWalking = true;
@@ -23,6 +42,11 @@ public class Cato extends Images{
         isWalking = false;
     }
 
+    /**
+     * Caminar hacia la casa
+     * @throws InterruptedException
+     * @throws IOException
+     */
     public void walkHouse() throws InterruptedException, IOException {
         animWalk();
         isWalking = true;
@@ -34,6 +58,11 @@ public class Cato extends Images{
         isWalking = false;
     }
 
+    /**
+     * caminar hacia el maizal
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public void walkCrop() throws IOException, InterruptedException {
         animWalk();
         isWalking = true;
@@ -64,6 +93,10 @@ public class Cato extends Images{
         isWalking = false;
     }
 
+    /**
+     * Hacer animacion de 'cuatro'
+     * @throws InterruptedException
+     */
     public void four() throws InterruptedException {
         boom.start();
         int dif = 15;
@@ -75,6 +108,11 @@ public class Cato extends Images{
         boom.finish();
     }
 
+    /**
+     * Animacion de voltear para atras
+     * @param sleep tiempo de espera entre cada frame
+     * @throws InterruptedException
+     */
     public void voltearAtras(int sleep) throws InterruptedException{
         for (int i=1; i<=11; i++){
             setImage("imgs/cato/anim/cato" + i + ".png");
@@ -83,13 +121,11 @@ public class Cato extends Images{
         }
     }
 
-    public void voltearAdelante(int sleep) throws InterruptedException{
-        for (int i=11; i>0; i--){
-            setImage("imgs/cato/anim/cato" + i + ".png");
-            Thread.sleep(sleep);
-        }
-    }
-
+    /**
+     * Realizar la animacion de caminado (En un hilo separado)
+     * @throws IOException
+     * @throws InterruptedException
+     */
     private void animWalk() throws IOException, InterruptedException {
         Thread animar = new Thread(() -> {
             try {
@@ -110,6 +146,7 @@ public class Cato extends Images{
         animar.start();
     }
 
+    //Declaracion y inicializacion de las variables en uso
     private boolean isWalking = false;
     private Music step = new Music("step1.wav");
     Music boom = new Music("boom.wav");

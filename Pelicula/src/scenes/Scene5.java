@@ -10,23 +10,35 @@ import uwcse.graphics.GWindow;
 
 import java.io.IOException;
 
+/**
+ * Escena 5 de el trailer
+ *
+ * @author istam
+ */
+
 public class Scene5 {
+    /**
+     * Metodo principal en el que se ejecuta la escena al ser llamada
+     * @param window ventana contenedora
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static void start(GWindow window) throws IOException, InterruptedException {
         Music night = new Music("rain2.wav");
         night.start();
         backGround = new BackGround( 0,0, "imgs/backgrounds/landscapeNight.png", window);
         Images whats = new Images(440, 160, "imgs/wtf.png");
 
-        crop = new Crop(0,0,"imgs/crop.png", window);
+        crop = new Crop(0,0, "imgs/crop.png", window);
         mill = new Mill(window,5);
         mill.start();
         house = new House(window);
-        cowPen = new CowPen(0,0,"imgs/cowpen.png", window);
-        straw = new Straw(0,0,"imgs/straw.png", window);
-        cow1 = new Cow(610,309,"imgs/cow/minicow.png",window);
-        cow2 = new Cow(660,335,"imgs/cow/miniwoc.png",window);
-        cow4 = new Cow(604,355,"imgs/cow/minicow.png",window);
-        cato = new Cato(320,360,"imgs/cato/mini/cato.png", window);
+        cowPen = new CowPen(0,0, "imgs/cowpen.png", window);
+        straw = new Straw(0,0, "imgs/straw.png", window);
+        cow1 = new Cow(610,309, "imgs/cow/minicow.png",window);
+        cow2 = new Cow(660,335, "imgs/cow/miniwoc.png",window);
+        cow4 = new Cow(604,355, "imgs/cow/minicow.png",window);
+        cato = new Cato(320,360, "imgs/cato/mini/cato.png", window);
         rain = new Rain(0,0,window);
         rain.start();
 
@@ -42,6 +54,9 @@ public class Scene5 {
         finished();
     }
 
+    /**
+     * Limpiar la ventana cuando la escena finalice
+     */
     private static void finished(){
         backGround.removeFromWindow();
         crop.removeFromWindow();
@@ -56,6 +71,7 @@ public class Scene5 {
         rain.removeFromWindow();
     }
 
+    //declaracion de las variables en uso por la escena
     private static BackGround backGround;
     private static Rain rain;
     private static Crop crop;
