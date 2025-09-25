@@ -31,10 +31,10 @@ public class Scene3 {
         house = new House(window);
         cowPen = new CowPen(0,0, "imgs/cowpen.png", window);
         straw = new Straw(0,0, "imgs/straw.png", window);
-        cow1 = new Cow(610,309, "imgs/cow/minicow.png",window);
+        cow1 = new Cow(610,309, "imgs/cow/miniCow.png",window);
         cow2 = new Cow(660,335, "imgs/cow/miniwoc.png",window);
-        cow3 = new Cow(550,335, "imgs/cow/minicow.png",window);
-        cow4 = new Cow(604,355, "imgs/cow/minicow.png",window);
+        cow3 = new Cow(550,335, "imgs/cow/miniCow.png",window);
+        cow4 = new Cow(604,355, "imgs/cow/miniCow.png",window);
         cato = new Cato(520,360, "imgs/cato/mini/cato.png", window);
 
         Thread.sleep(1000);

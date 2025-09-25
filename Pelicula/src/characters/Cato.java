@@ -23,7 +23,7 @@ public class Cato extends Images{
      */
     public Cato(int x, int y, String path, GWindow window) throws IOException {
         super(x, y, path);
-        addTo(window);
+        image.addTo(window);
     }
 
     /**

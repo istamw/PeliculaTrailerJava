@@ -40,11 +40,13 @@ public class Scene2 {
         hand1.appearHand1();
         Thread.sleep(500);
         hand2.appearHand2();
-        new Music("moo.wav");
+        Music moo = new Music("moo.wav");
+        moo.start();
         Thread.sleep(500);
         hand3.appearHand3();
         Thread.sleep(500);
         hand4.appearHand4();
+        moo.finish();
 
         Thread.sleep(2000);
         pop.finish();
