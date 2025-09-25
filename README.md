@@ -1,2 +1,3 @@
 # PeliculaTrailerJava
 Proyecto de Programacion I.
+<img width="3200" height="2400" alt="CowPen4x" src="https://github.com/user-attachments/assets/bcae738f-b48c-426f-8b24-082710eafc3f" />
