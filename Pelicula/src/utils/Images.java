@@ -35,6 +35,14 @@ public class Images {
         }
     }
 
+    public int getX(){
+        return image.getX();
+    }
+
+    public int getY(){
+        return image.getY();
+    }
+
     private Image img;
     protected ImageShape image;
 }

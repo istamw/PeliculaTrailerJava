@@ -7,8 +7,9 @@ import uwcse.graphics.Polygon;
 import java.awt.*;
 
 public class Mill extends Thread{
-    public Mill(GWindow window) throws InterruptedException {
+    public Mill(GWindow window, int bladeVelocity) throws InterruptedException {
         this.window = window;
+        this.bladeVelocity = bladeVelocity;
         setShadow();
         setMillBottom();
         setMillTop();
@@ -89,7 +90,7 @@ public class Mill extends Thread{
             blade2.rotateAround(pivotX,pivotY,2);
             blade3.rotateAround(pivotX,pivotY,2);
             blade4.rotateAround(pivotX,pivotY,2);
-            Thread.sleep(20);
+            Thread.sleep(bladeVelocity);
         }
     }
 
@@ -114,6 +115,7 @@ public class Mill extends Thread{
     }
 
     private final GWindow window;
+    private final int bladeVelocity;
 
     private final Color millBottomColor = new Color(184, 111, 80);
     private final Color millBottomDarkColor = new Color(138,83,59);
