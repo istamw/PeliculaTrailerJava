@@ -1,5 +1,6 @@
 # PeliculaTrailerJava
-Proyecto de Programacion I FIUNI 
+Proyecto de Programacion I FIUNI
+
 Archivo JAR ejecutable <a href="https://github.com/istamw/PeliculaTrailerJava/releases/tag/trailer">AQUI</a>.
 
 ## Para abrir el codigo fuente, se debe abrir el proyecto desde Pelicula (Carpeta que contiene el src, resources)
