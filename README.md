@@ -2,6 +2,7 @@
 Proyecto de Programacion I FIUNI
 
 Resultado:
+
 https://github.com/user-attachments/assets/6bccee3f-67c3-402e-ba93-c0a643dfe688
 
 Archivo JAR ejecutable <a href="https://github.com/istamw/PeliculaTrailerJava/releases/tag/trailer">AQUI</a>.
