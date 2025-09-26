@@ -7,7 +7,11 @@ Archivo JAR ejecutable <a href="https://github.com/istamw/PeliculaTrailerJava/re
 ### Proyecto hecho en INTELIJ IDEA
 
 #Resultado:
-https://github.com/user-attachments/assets/fa1cbfc7-0b55-4ce6-a862-a0a3b05329c7
+
+
+https://github.com/user-attachments/assets/6bccee3f-67c3-402e-ba93-c0a643dfe688
+
+
 
 Fondito de pantalla de regalo:
 <img width="3200" height="2400" alt="CowPen4x" src="https://github.com/user-attachments/assets/bcae738f-b48c-426f-8b24-082710eafc3f" />
